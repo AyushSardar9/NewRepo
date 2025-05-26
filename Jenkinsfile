@@ -1,17 +1,18 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
-        stage('Build'){
-            steps{
-                echo 'Build Sucessfully'
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/AyushSardar9/NewRepo.git'
             }
         }
-        stage('Run'){
-            steps{
-                echo 'Run Sucessfully'
-                bat 'node demo.js'
+
+        stage('Display HTML') {
+            steps {
+                bat 'start index.html'
             }
         }
     }
 }
+
