@@ -13,7 +13,7 @@ pipeline {
                 publishHTML(target:[
                     reportName:'HTML page',
                     reportDir:'.',
-                    reportFiles:'index.html',
+                    reportFiles:'Ayush.html',
                     keepAll:true,
                     alwaysLinkToLastBuild:true,
                     allowMissing:false
