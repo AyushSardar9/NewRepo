@@ -10,7 +10,14 @@ pipeline {
 
         stage('Display HTML') {
             steps {
-                bat 'start index.html' // for Windows
+                publishHTML(target:[
+                    reportName:'HTML page',
+                    reportDir:'.',
+                    reportFiles:'index.html',
+                    keepAll:true,
+                    alwaysLinkToLastBuild:true,
+                    allowMissing:false
+                ]
             }
         }
     }
