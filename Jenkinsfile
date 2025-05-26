@@ -4,15 +4,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/AyushSardar9/NewRepo.git'
+                git branch: 'main', url: 'https://github.com/AyushSardar9/NewRepo.git'
             }
         }
 
         stage('Display HTML') {
             steps {
-                bat 'start index.html'
+                bat 'start index.html' // for Windows
             }
         }
     }
 }
+
 
